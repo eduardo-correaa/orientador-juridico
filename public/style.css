@@ -1,0 +1,814 @@
+* {
+    box-sizing: border-box;
+    font-family: "Oswald", sans-serif;
+}
+
+    body {
+  background-image: url("/imagens/fundo7.jpg");
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat; 
+  height: 100vh;                
+  margin: 0;
+}
+
+#topo {
+    background-color: #ededed;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 80px;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#toggle-menu {
+    display: none;
+    border: none;
+    border-radius: 8px;
+    background-color: #4d66d2;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+#toggle-menu span{
+
+    width: 30px;
+    height: 2px;
+    background-color: #4d66d2;
+}
+
+#toggle-menu span::before,
+#toggle-menu span::after{
+
+    content:'';
+    display: flex;
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #4d66d2
+}
+#toggle-menu span::before{
+    top: 16px;
+}
+#toggle-menu span::after{
+
+    top: 30px;
+}
+
+#logo{
+    width: 60px;
+    height: 60px;
+    display: block;
+}
+
+#menu-content{
+    min-width: 300px;
+    display: flex;
+
+}
+#menu{
+    display: flex;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.menu-item> a{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    height: 80px;
+    padding: 0 80px;
+    color: #4d66d2;
+    line-height: 80px;
+    transition: all 0.3s;
+    border-radius: 5;
+}
+
+.menu-item> a:hover,
+.menu-item> a:focus {
+    background-color: #d3d3d3;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+@media screen and (max-width:480px){
+    body{
+        background-color: red;
+    }
+    #menu-content{
+    height: calc(100vh - 80px);
+    position: fixed;
+    top: 80px;
+    right: -300px;
+    opacity: 0;
+    left: auto;
+    background: #FFFFFF;
+    flex-direction: column;
+    transition: 0.5s;
+    }
+    #menu{
+        flex-direction: column;
+    }
+    #toggle-menu{
+    display: flex;
+    
+    }
+    .menu-item{
+        width: 100px;
+    padding: 0 12px;
+    display: flex;
+    margin-bottom: 10px;
+
+    }
+    .menu-item > a{
+        width: 100px;
+        text-align: center;
+    }
+    .menu-open #menu-content{
+        right: 0;
+        opacity: 1;
+    }
+}
+
+
+.pagina-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100%;
+  flex-direction: row;
+}
+
+
+.sugestoes {
+  position: sticky;
+  top: 100px;
+  background-color: rgba(0, 0, 128, 0.8);
+  color: white;
+  padding: 20px;
+  width: 260px;
+  margin-left: 60px;
+  border-radius: 10px;
+  font-family: 'Oswald', sans-serif;
+  height: fit-content;
+  font-size: 18px;
+}
+
+.sugestoes h3 {
+  margin-top: 0;
+  font-size: 22px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+}
+
+.sugestoes p {
+  margin: 12px 0;
+  font-size: 17px;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Animação do aviso */
+@keyframes piscarAviso {
+  0% { color: rgb(255, 0, 0); }
+  50% { color: #060660; }
+  100% { color: rgb(255, 0, 0); }
+}
+
+/* Aviso reposicionado no canto inferior esquerdo */
+.aviso-rolagem {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Oswald', sans-serif;
+  animation: piscarAviso 2.4s infinite;
+  z-index: 999;
+}
+
+
+
+#contato {
+  background-color: #03033c;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.contato-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contato-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contato-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.contato-container ul li {
+  margin: 10px 0;
+}
+
+.contato-container ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contato-container ul li a:hover {
+  text-decoration: underline;
+}
+
+.contato-container p {
+  font-size: 14px;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+
+
+
+body.busca-processos {
+  margin: 0;
+  padding: 0;
+  background-image: url("imagens/fundo2.jpg");
+  font-family: "Oswald", sans-serif;
+  background-color: #ededed;
+  color: #4d66d2;
+}
+
+/* ===== Sidebar ===== */
+.busca-processos .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 220px;
+  align-items: center;
+  background-color: #ededed;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.busca-processos .sidebar button {
+  background-color: #ededed;
+  color: #4d66d2;
+  border: none;
+  width: 80%;
+  font-size: 17px;
+  padding: 40px 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: block;
+  height: 80px;
+  text-decoration: none;
+    transition: all 0.3s;
+    border-radius: 0;
+  ;
+}
+
+.busca-processos .sidebar button:hover {
+  background-color: #d3d3d3;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* ===== Main Content ===== */
+.busca-processos .main-content {
+  margin-left: 240px;
+  padding: 30px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* ===== Container ===== */
+.busca-processos .container {
+  background-color: #ededed;
+  border: 3px solid #4d66d2;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.busca-processos h1 {
+  text-align: center;
+  color: #4d66d2;
+}
+
+.busca-processos .input-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.busca-processos input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.busca-processos .container button {
+  background-color: #d3d3d3;
+  color: #000080;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.busca-processos .container button:hover {
+  background-color: #ededed;
+}
+
+/* Aviso e Resultado */
+.busca-processos #loading {
+  text-align: center;
+  font-weight: bold;
+  color: #4d66d2;
+}
+
+.busca-processos #avisoUltimaBusca {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  border-radius: 5px;
+  color: #856404;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.busca-processos #resultado {
+  margin-top: 20px;
+}
+
+.busca-processos #resultado div {
+  background-color: #e6f0ff;
+  border: 1px solid #d3d3d3;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+/* ===== Body ===== */
+body.chatbot {
+  margin: 0;
+  padding: 0;
+  background-image: url("../imagens/fundo2.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Oswald", sans-serif;
+  background-color: #ededed;
+  color: #4d66d2;
+}
+
+/* ===== Sidebar ===== */
+.chatbot .sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 220px;
+  background-color: #ededed;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.chatbot .sidebar button {
+  background-color: #ededed;
+  color: #4d66d2;
+  border: none;
+  width: 100%;
+  font-size: 17px;
+  padding: 20px 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.chatbot .sidebar button:hover {
+  background-color: #d3d3d3;
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* ===== Main Content ===== */
+.chatbot .main-content {
+  margin-left: 220px; /* Deixa espaço para a sidebar */
+  min-height: 100vh;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Container ===== */
+.chatbot .container {
+  width: 500px;
+  max-width: 90%;
+  background-color: #ededed;
+  border: 3px solid #4d66d2;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ===== Mensagem Central no topo ===== */
+.chatbot .mensagem-central {
+  text-align: center;
+  background-color: #e6f0ff;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #4d66d2;
+}
+
+/* ===== Input Group ===== */
+.chatbot .input-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.chatbot input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+  background-color: #f8f8f8;
+}
+
+.chatbot .container button {
+  background-color: #d3d3d3;
+  color: #000080;
+  border: none;
+  font-family: "Oswald", sans-serif;
+  font-size: 17px;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.chatbot .container button:hover {
+  background-color: #ededed;
+}
+
+/* ===== Resposta com expansão dinâmica ===== */
+#respostaContainer {
+  background-color: #f0f4ff;
+  border: 1px solid #4d66d2;
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  transition: all 0.4s ease;
+}
+
+#respostaContainer.mostrar {
+  display: block;
+  width: 600px; /* Aumenta a largura quando aparece */
+  max-width: 100%;
+}
+
+/* ===== Processo e Detalhes ===== */
+.chatbot h1 {
+  text-align: center;
+  color: #4d66d2;
+}
+
+.chatbot #detalhesProcesso {
+  text-align: center;
+  color: #333;
+}
+
+
+body.login {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.login-container button:hover {
+  background: #1d4ed8;
+}
+
+.erro {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===== CADASTRO ===== */
+body.cadastro {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2c5364;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #203a43;
+}
+
+.link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.link a {
+    color: #2c5364;
+    text-decoration: none;
+}
+
+body.planos {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0,0,30,0.85), rgba(0,0,50,0.9)),
+    url("/imagens/fundo7.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.titulo-pagina {
+  text-align: center;
+  font-size: 42px;
+  margin-top: 120px;
+  margin-bottom: 50px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.planos-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.plano {
+  background-color: rgba(255,255,255,0.95);
+  width: 300px;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.plano:hover {
+  transform: translateY(-10px);
+}
+
+.plano h2 {
+  color: #4d66d2;
+  font-size: 28px;
+}
+
+.preco {
+  font-size: 26px;
+  color: #000080;
+  margin: 15px 0;
+}
+
+.plano ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.plano ul li {
+  margin: 10px 0;
+}
+
+.btn-plano {
+  background-color: #4d66d2;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.btn-plano:hover {
+  background-color: #000080;
+}
+
+.destaque {
+  border: 3px solid #4d66d2;
+  transform: scale(1.05);
+}
+
+body.lexclips {
+  margin: 0;
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: 
+    linear-gradient(rgba(0,0,30,0.85), rgba(0,0,50,0.9)),
+    url("/imagens/fundo7.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+
+
+.advogados-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.card-adv {
+  background-color: rgba(255, 255,255,0.9);
+  width: 280px;
+  height: 380px;
+  padding:25px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap:10px;
+  transition: 0.3s;
+}
+
+.card-adv:hover {
+  transform: translateY(-10px);
+}
+
+.card-adv img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.card-adv h3 {
+  color: #4d66d2;
+  margin-bottom: 5px;
+}
+
+.card-adv button {
+  background-color: #4d66d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.card-adv button:hover {
+  background-color: #000080;
+}

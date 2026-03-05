@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Chatbot Jurídico - Acompanhamento de Processos</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="chatbot">
+
+  <!-- ===== Sidebar ===== -->
+  <div class="sidebar">
+    <div style="height: 120px;"></div>
+    <button onclick="window.location.href='index.html'">HOME</button>
+    <button onclick="window.location.href='chatbot.html'">BUSCA</button>
+    <button onclick="window.location.href='planos.html'">PLANOS</button>
+    <button onclick="window.location.href='lexclips.html'">LEXCLIPS</button>
+  </div>
+
+  <!-- ===== Conteúdo Principal ===== -->
+  <div class="main-content">
+    <div class="container">
+
+      <!-- Dados do processo -->
+      <h1 id="numProcesso">Processo em análise:</h1>
+      <p id="detalhesProcesso">Carregando informações do processo...</p>
+
+      <!-- Mensagem no topo da caixa -->
+      <div class="mensagem-central">
+        <p>Olá! Aqui você pode tirar dúvidas sobre seu processo ou sobre leis.</p>
+      </div>
+
+      <!-- Área de resposta dinâmica -->
+      <div id="respostaContainer">
+        <p id="resposta"></p>
+      </div>
+
+      <!-- Área de input fixa -->
+      <div class="input-group">
+        <input type="text" id="inputPergunta" placeholder="Digite sua pergunta">
+        <button id="botaoEnviar">Enviar</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="/chatbot.js" defer></script>
+</body>
+</html>

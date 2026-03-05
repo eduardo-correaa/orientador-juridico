@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Busca de Processos</title>
+
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Fonte -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+
+<body class="busca-processos">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div style="height: 120px;"></div>
+    <button onclick="window.location.href='index.html'">HOME</button>
+    <button onclick="window.location.href='chatbot.html'">CHATBOT</button>
+    <button onclick="window.location.href='planos.html'">PLANOS</button>
+    <button onclick="window.location.href='lexclips.html'">LEXCLIPS</button>
+  </aside>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <div class="container">
+
+      <h1>Consulta de Processos</h1>
+
+      <!-- Aviso de última busca -->
+      <div id="avisoUltimaBusca" style="display: none;">
+        <span id="textoUltimaBusca"></span>
+        <button id="botaoVerUltimaBusca">Ver Novamente</button>
+      </div>
+
+      <!-- Campo de busca -->
+      <div class="input-group">
+        <input 
+          type="text" 
+          id="inputBusca" 
+          placeholder="Digite o CPF"
+          maxlength="14"
+        >
+        <button id="botaoBuscar">Buscar</button>
+      </div>
+
+      <!-- Loading -->
+      <div id="loading" style="display: none;">
+        🔎 Buscando processo...
+      </div>
+
+      <!-- Resultado -->
+      <div id="resultado"></div>
+
+    </div>
+  </main>
+
+  <!-- Script específico da página -->
+  <script src="/busca-processos.js" defer></script>
+
+</body>
+</html>
